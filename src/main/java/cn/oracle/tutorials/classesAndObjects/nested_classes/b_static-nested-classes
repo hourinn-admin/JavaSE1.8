@@ -1,0 +1,10 @@
+1.Static Nested Classes
+
+	●As with class methods and variables, a static nested class is associated with its outer class
+		And like static class methods, a static nested class cannot refer directly to instance variables or methods defined in its enclosing class: 
+	●Static nested classes are accessed using the enclosing class name: OuterClass.StaticNestedClass
+	●a static nested class is behaviorally a top-level class that has been nested in another top-level class for packaging convenience.
+	●static nested class can used in an interface to create some common logic.
+	
+
+	

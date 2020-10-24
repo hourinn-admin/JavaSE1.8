@@ -1,0 +1,41 @@
+Initializing Fields
+	you can often provide an initial value for a field in its declaration:
+		 public static int staticFieldName = 10;
+		 public type fieldName = 20;
+		 
+		 
+	1.Static Initialization Blocks
+		
+		static {
+    		// whatever code is needed for initialization goes here
+		}
+		
+		*this works well when the initialization value is available and the initialization can be put on one line. 
+		However, this form of initialization has limitations because of its simplicity. If initialization requires some logic 
+		simple assignment is inadequate. Instance variables can be initialized in constructors, where error handling or other logic can be used. 
+		To provide the same capability for class variables, the Java programming language includes static initialization blocks.
+		
+		
+		
+	2.Initializing Instance Members
+		Normally, you would put code to initialize an instance variable in a constructor. 
+		There are two alternatives to using a constructor to initialize instance variables: initializer blocks and final methods.	
+		
+		
+		Initializer blocks:
+			{
+   			 // whatever code is needed for initialization goes here
+			}
+			
+		final method:
+			A final method cannot be overridden in a subclass,Here is an example of using a final method for initializing an instance variable:
+			class Whatever {
+			    private varType myVar = initializeInstanceVariable();
+			    protected final varType initializeInstanceVariable() {
+			        // initialization code goes here
+			    }
+			}
+			
+		
+			
+		
