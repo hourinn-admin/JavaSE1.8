@@ -1,0 +1,14 @@
+1.Declaring a local classes 
+		●you can define a local class inside any block,for example in a method body,a for loop,or an if clause
+		●you typically find local classes defined in the body of a method
+		
+2.Accessing Members Of An Enclosing Class
+
+		●a local class has access to the members of its enclosing class
+		●a local class has access to local variables    *before Java SE 8,the local variables must be final ,starting in Java SE 8, the local variables can be effectively final
+		●starting in Java SE 8,a local class has can assess the method's parameters
+		
+3.Local classes are non-static because they have access to instance members of the enclosing block
+
+		●you cannot declare static initializers or members interfaces in an anonymous class
+		●an anonymous class can have static members provided that they are constant variables
