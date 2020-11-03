@@ -1,0 +1,25 @@
+1.The Anonymous Class Expression consists of the following:
+
+	●The new operator
+	●The name of an interface to implement or a class to extend.
+	●Parentheses that contain the arguments to a constructor ,just like a normal class instance creation expression
+		when you implement an interface,there is no constructor,so you use an empty pair of parentheses.
+	●A body ,which is a class declaration body ,More specifically ,in the body ,statements are not allowed
+
+2.Accessing Local Variables of the Enclosing scope
+	
+	●An anonymous class has access to the members of its enclosing class
+	●An anonymous class cannot access local variables in its enclosing scope that are not declared as final or effectively final.(anonymous classes can capture variables)
+	●Like a nested class,a declaration of a type in an anonymous class shadows any other declarations in the enclosing scope that have the same name.
+	
+3. The restrictions of Anonymous classes with respect to their members
+
+	●you cannot declare static initializers or members interfaces in an anonymous classes
+	●An anonymous class can have static members provided that they are constant variables
+	
+4.What you can declare in annoymous classes
+	
+	●Fields
+	●Extra methods
+	●Instance initializers
+	●local classes

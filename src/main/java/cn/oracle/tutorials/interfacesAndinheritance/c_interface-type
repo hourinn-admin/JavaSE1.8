@@ -1,0 +1,12 @@
+1.The Interface type
+
+	●when classes implement an interface ,the objects instantiated from these classes,no matter what their class inheritance is ,they can be of both their own class(or supperclass) type 
+		and the interface type.
+	●the multiple inheritance that extend a supperclass or implement an interface can give them some of the advantages where they can have behavior from both a supperclass and an interface.
+	
+
+	
+	
+	
+
+	

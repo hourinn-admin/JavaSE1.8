@@ -1,0 +1,12 @@
+1.Implementing An Interface
+    
+	Defining an interface which can compare the "size" of similar objects instantiated from the classes that implement the interface
+	For strings ,it could be number of characters;for book ,it could be number of pages;for person ,it could be age;for planer geometric objects,area 
+	would be a good choice,while volume would be work for three-dimensional geometric objects;
+	
+
+	
+	
+	
+
+	
