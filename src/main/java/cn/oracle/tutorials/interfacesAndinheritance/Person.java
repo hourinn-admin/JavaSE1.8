@@ -36,12 +36,4 @@ class Person implements Comparable{
 	}
 
 	
-	public static void main(String[] args) {
-		Comparable nancy = new Person("Nancy",25);
-		Person jelly = new Person("jelly",28);
-		
-		System.out.println(nancy.compareTo(jelly));
-	}
-
-	
 }

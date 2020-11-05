@@ -1,11 +1,14 @@
-package cn.oracle.tutorials.interfacesAndinheritance;
+package cn.corejavavolume11.inheritance.sub;
+
+import cn.corejavavolume11.inheritance.Employee;
 
 public class Manager extends Employee{
 	
 	private double bonus;
 	
 	public Manager(String name, double salary, int year,int month,int day,double bonus) {
-		super(name, salary,year,month,day);
+		System.out.println("manager object :" +this);
+		super.salary = salary;
 		this.bonus = bonus;
 	}
 	
@@ -13,12 +16,7 @@ public class Manager extends Employee{
 		this.bonus = bonus;
 	}
 	
-	void print(String message) {
-		System.out.println("sub class: " + message);
-	}
-	
 	public double getSalary() {
-		return super.getSalary() + bonus;
+		return this.salary + bonus;
 	}
-	
 }
