@@ -1,0 +1,14 @@
+1.If Make Some change on interface ,such as add a new function.there are two ways to do it:
+		●define a new interface to extends the existing interface
+		●add a default method or static method to existing interface
+		
+2.the difference  between default method and static method
+
+	●default method is used to extend the functionalities in a interface like other abstract method 
+	●static method often regarded as utility methods used by default method 
+	
+3.when extend an interface that contains a default method ,you can do the following:
+
+	●Not mention the default method at all, which lets your extended interface inherit the default method.
+	●Redeclare the default method, which makes it abstract.     --Any class that implements the extending interface will have implement the abstract method
+　　　	●Redefine the default method, which overrides it.       --Any class that implements the extending interface  will use the implementation of the default method specified by the extending interface

@@ -7,13 +7,6 @@ public interface Comparable {
 	 * @param o
 	 * @return
 	 */
-	int compareTo(Comparable o);
+	public abstract int compareTo(Comparable o);
 	
-	default  void print(String message) {
-		System.out.println(message);
-	}
-	
-	static void echo() {
-		System.out.println("echo");
-	}
 }
