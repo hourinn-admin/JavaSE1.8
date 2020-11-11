@@ -43,4 +43,8 @@ public interface Card extends Comparable<Card>{
 	
 	public Card.Suit getSuit();
     public Card.Rank getRank();
+    
+    public static void main(String[] args) {
+		System.out.println(Card.Suit.values()[0]);
+	}
 }
