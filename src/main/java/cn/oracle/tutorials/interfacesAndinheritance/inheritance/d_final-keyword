@@ -1,0 +1,7 @@
+1.when to using final keyword
+	 ● if it has an implementation that should not be changed and it is critical to the consistent state of the object.
+	 	such us Methods called from constructors should generally be declared final. If a constructor calls a non-final method, 
+ 		a subclass may redefine that method with surprising or undesirable results.
+	 
+	 ●you can also declare an entire class final. A class that is declared final cannot be subclassed. 
+	 	This is particularly useful, for example, when creating an immutable class like the String class.

@@ -1,12 +1,17 @@
-1.The eight primitive data types supported by the Java programming language are:
-	.byte : 8-bit -2^7~2^7-1
-	.short : 16-bit -2^16~2^16-1
-	.int : 32-bit -2^32~2^32-1
-	.long : 64-bit -2^64~2^64-1
-	.float : 
-	.double
-	.boolean ： true of false
-	.char ： a single 16-bit Unicode character '\u0000' ~ '\uffff'
+1.The Eight Primitive Type
+	■ NumericType
+	   ● IntegralType
+			.byte :  8-bit signed two's complement integer   -2^7~2^7-1  						-128 ~ 127
+			.short : 16-bit signed two's complement integer  -2^15~2^15-1        				-32768 ~ 32767
+			.int :   32-bit signed two's complement integer  -2^31~2^31-1						-2147483648 ~ 2147483647
+			.long :  64-bit signed two's complement integer  -2^63~2^63-1						-9223372036854775808 ~ 9223372036854775807
+			.char ： 	16-bit unsigned integers representing UTF-16 code units						'\u0000' ~ '\uffff' | 0 ~ 65535 
+		● FloatingPointType
+			.float :  (single-precision 32-bit IEEE 754 floating-point numbers)						1.4E-45 ~ 3.4028235E38
+			.double:  (double-precision 64-bit IEEE 754 floating-point numbers)						4.9E-324 ~ 1.7976931348623157E308		
+	■ boolean
+ 		.boolean ： true of false
+	 					
 	
 2.default value of the eight primitive types(for fields)
 	.byte ： 0
@@ -20,27 +25,114 @@
 	
 	*the compiler never assigns a default value to an uninitialized local variable,make sure to assign it a value before use it.
 
-3.Integer Literals
-	.an integer literal is of type long if it ends withs the letter l or L(long literals),otherwish it is of type int(int literals)
-		recommended to use the upper letter L.integer literals = int literals + long literals
-	.values of the integral type byte,short,int,long can be created from int literals,values of the type long can be created from long literals
-	.integer literals can be  expressed by these number systems:
+3.Literals
+	 ※ A literal is the source code representation of a fixed value,literals are represented directly in your code without requiring computation	
+	
+4.Integer Literals
+
+	●　an integer literal is of type long if it ends withs the letter l or L(long literals),recommended to use the upper letter L.otherwish it is of type int(int literals)
+		※integer literals = int literals + long literals		
+	●　values of the integral type byte,short,int,long,char can be created from int literals
+	●　values of the type long can be created from long literals,Values of type long that exceed the range of int must be created from long literals
+	●　integer literals can be  expressed by these number systems:
 		.Decimal:base 10
 		.HexaDecimal:base 16
+		.Octonary:base 8
 		.binary:base 2
+		
+	※The Java programming language is a statically typed language, which means that every variable and every expression has a type that is known at compile time.
+	　　　	.default type of int literals  is int  
+		.default type of float-point literals  is double
+	
+5.Char Literals
+	
+	●　can use almost any Unicode (UTF-16) characters directly in code
+	●　'Unicode escape'　　like '\u0108'
+	●　a few special escape sequences for char literals: 
+		\t (tab),\r (carriage return),\b (backspace),\n (line feed),\f (form feed),\" (double quote),\' (single quote),\\ (backslash)
+	
+	※.Always use 'single quotes' for char literals;
 
-4.Float-Point Literals
-	.a floating-point literal is of type float if it ends with the letter F or f(32-bit float literal); 
-		otherwith its type is double and it can optionally end with the letter D or d(64-bit double literal)
-	.floating-point literal can also be expressed using E or e(for scientific notation)
-	
-5.Character and String Literals
-	.literals of types char and String may contain any Unicode characters
-	.Always use 'single quotes' for char literals and "double quotes" for String literals;
-	.'Unicode escape' like '\u0108'  may be used elsewhere in a program (such as in field names),not just in char or String literals;
-	.Java also supports a few special escape sequences for char literals: \t (tab), \r (carriage return)
-		and string literals : \b (backspace),  \n (line feed),\f (form feed), \" (double quote), \' (single quote), and \\ (backslash)
+6.Float-Point Literals
+
+	●　a floating-point literal is of type float if it ends with the letter F or f(32-bit float literal),otherwith its type is double and it can optionally end with the letter D or d(64-bit double literal)
+		※Float-Point Literals　= float literal  + double literal
+	●　floating-point literal can also be expressed using E or e(for scientific notation)
 	
 	
+	
+7.Using Underscore Characters in Numeric Literals
+	
+	●　In Java SE 7 and later, any number of underscore characters (_) can appear anywhere between digits in a numerical literal. 
+	●　You can place underscores only between digits; you cannot place underscores in the following places:
+	
+		.At the beginning or end of a number
+		.Adjacent to a decimal point in a floating point literal
+		.Adjacent to a L(l),F(f),D(d),0X(x),0B(b) 
+		.In positions where a string of digits is expected
+
+-------------------------------------------------------------------------------------------------
+		计算机里面的整数都是用补码表示：
+		
+		原码:
+		00000000  0                             
+		00000001  1              10000001    -1         
+		01111110  126            11111110    -126        
+		01111111  127            11111111    -127       
+		
+		
+		反码:
+		00000000  0              
+		00000011  1              11111110    -1
+		01111110  126            10000001    -126
+		01111111  127            10000000    -127
+		
+		
+		补码:
+		00000000  0              10000000    -128    	-128在运算中的补码是 [1000 0000]，并且没有反码和原码表示               
+		00000011  1              11111111    -1
+		01111110  126            10000010    -126
+		01111111  127            10000001    -127
+		
+		使用补码表示的范围为[-128, 127].
+
+-------------------------------------------------------------------------------------------------
+
+type casting in primitive data types
+
+  "The Java programming language is a statically typed language, which means that every variable and every expression has a type that is known at compile time."
+	翻译过来就是Java是一种静态类型语言，所有的变量和表达式（包括字面量）都会在编译期间赋予类型。所以对于基本数据类型来说，未声明数据类型的整数，默认类型为int；为声明类型的浮点数，默认为double型。
+
+   ●　Widening primitive conversions
+   		19 specific conversions on primitive types are called the widening primitive conversions:
+			● byte to short,int,long,float,double
+			●　short to int ,long ,float ,double
+			● char to int,long,float,double
+			●　int to long,float,double
+			●　long to float ,double
+			●　float to double
+   		※this conversions happens automatically known as Implicit Type Casting
+   		
+    ●　Narrowing Primitive Conversion
+   		2 specific conversions on primitive types are called the narrowing primitive conversions:
+	   		●　short to char,byte
+	   		●　char to byte,short
+	   		●　int to byte,char,short
+	   		●　long to byte,char,short,int 
+	   		●　float to byte ,char,short,int,long
+	   		●　double to byte,char,short,int,long,float
+	   		
+	  	※关于Narrowing conversion 有两种形式，显示转换和隐式转换                 显式  byte a = (byte)i;int i = 3     隐式 byte a = 3; 		
+			对于后者将一个int型的3赋给一个byte型的变量c，居然编译正确，这是为什么呢？
+			原因在于：jvm在编译过程中，对于默认为int类型的数值时，当赋给一个比int型数值范围小的数值类型变量（在此统一称为数值类型k，k可以是byte/char/short类型），
+					会进行判断，如果此int型数值超过数值类型k，那么会直接编译出错。因为你将一个超过了范围的数值赋给类型为k的变量，k装不下嘛，你有没有进行强制类型转换，当然报错了。
+					但是如果此int型数值尚在数值类型k范围内，jvm会自定进行一次隐式类型转换，将此int型数值转换成类型k。如图中的虚线箭头。这一点有点特别，需要稍微注意下。
+
+
+   		
+   	
+	
+   		
+
 
 

@@ -1,0 +1,5 @@
+1.when to use super keyword
+	● invoke the overridden method
+	● refer to a hidden field (although hiding fields is discouraged).
+	●　invoke a superclass's constructor
+	●　 override the supertype methods when default methods conflict  ※[ExtendedInterfaceName].super.[defaultMethod]

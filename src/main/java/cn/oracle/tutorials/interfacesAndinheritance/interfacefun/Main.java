@@ -1,4 +1,4 @@
-package cn.oracle.tutorials.interfacesAndinheritance;
+package cn.oracle.tutorials.interfacesAndinheritance.interfacefun;
 
 public class Main {
 
@@ -6,9 +6,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		TimeClient myTimeClient = new SimpleTimeClient();
 		System.out.println(myTimeClient.toString());
-		
 		System.out.println(myTimeClient.getZonedDateTime("Asia/Shanghai").toString());
-		
 	}
 }
 

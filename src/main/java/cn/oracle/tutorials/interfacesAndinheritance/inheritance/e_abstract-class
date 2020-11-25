@@ -1,0 +1,11 @@
+1.when to use abstract class
+	● you want to share code among several closely related classes.
+	● You expect that classes that extend your abstract class have many common methods or fields,
+	
+	a perfect situation for an abstract superclass.
+	
+		in an object-oriented drawing application, you can draw circles, rectangles, lines, Bezier curves, and many other graphic objects. 
+		These objects all have certain states (for example: position, orientation, line color, fill color) and behaviors (for example: moveTo, rotate, resize, draw) in common. 
+		Some of these states and behaviors are the same for all graphic objects (for example: position, fill color, and moveTo). 
+		Others require different implementations (for example, resize or draw). All GraphicObjects must be able to draw or resize themselves; 
+		they just differ in how they do it. 

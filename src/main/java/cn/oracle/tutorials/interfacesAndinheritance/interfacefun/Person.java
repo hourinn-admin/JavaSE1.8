@@ -1,4 +1,4 @@
-package cn.oracle.tutorials.interfacesAndinheritance;
+package cn.oracle.tutorials.interfacesAndinheritance.interfacefun;
 
 class Person implements Comparable{
 	

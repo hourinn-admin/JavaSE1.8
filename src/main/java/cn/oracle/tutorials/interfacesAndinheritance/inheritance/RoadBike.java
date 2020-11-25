@@ -1,0 +1,31 @@
+package cn.oracle.tutorials.interfacesAndinheritance.inheritance;
+
+import cn.oracle.tutorials.interfacesAndinheritance.inheritance.sub.Bicycle;
+
+public class RoadBike extends Bicycle{
+	private int tireWidth;
+	
+	
+	public RoadBike(int startCadence,
+	         int startSpeed,
+	         int startGear,
+	         int newTireWidth){
+		super(startCadence, startSpeed,startGear);
+		this.setTireWidth(newTireWidth);
+	}
+	 
+	public int getTireWidth(){
+		return this.tireWidth;
+	}
+
+    public void setTireWidth(int newTireWidth){
+    	this.tireWidth = newTireWidth;
+    }
+    
+    public String printDescription(){
+    	return super.printDescription() + "RoadBike [tireWidth=" + tireWidth + "]";
+    }
+    
+    
+	 
+}

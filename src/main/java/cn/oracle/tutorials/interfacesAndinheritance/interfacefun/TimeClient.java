@@ -1,4 +1,4 @@
-package cn.oracle.tutorials.interfacesAndinheritance;
+package cn.oracle.tutorials.interfacesAndinheritance.interfacefun;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
