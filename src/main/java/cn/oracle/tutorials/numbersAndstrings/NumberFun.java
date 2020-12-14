@@ -13,9 +13,13 @@ public class NumberFun {
 	
 	public static void main(String[] args) {
 		
-		int b = 0413;
+		Integer i = new Integer(1);
 		
-		int c = 0827;
+		Byte b = new Byte((byte)1);
+		
+		i.intValue();
+		
+		String stri;
 	}
 }
 

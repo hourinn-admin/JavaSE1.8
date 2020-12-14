@@ -1,0 +1,16 @@
+Generics
+	1.generic types
+		A generic type is a generic class or interface that is parameterized over types,An invocation of a generic type is generally known as a parameterized type.
+		
+	2.Type Parameter Naming Convations
+		●　K - Key
+		●　N - Number
+		●　T - Type
+		●　V - Value	
+		
+	3.The Diamond(In Java SE 7 and later)
+		eg : Box<Integer> integerBox = new Box<>();
+		 	 Pair<String,String> pairB = new OrderPair<>();
+		 	 
+
+		
