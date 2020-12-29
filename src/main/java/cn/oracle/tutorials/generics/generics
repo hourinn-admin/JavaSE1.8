@@ -1,16 +1,91 @@
-Generics
-	1.generic types
-		A generic type is a generic class or interface that is parameterized over types,An invocation of a generic type is generally known as a parameterized type.
+Generics(generic types & generic methods)
+	
+	◆　defination : In a nutshell,generics enable types(classes and interfaces) to be parameters when defining classes ,interfaces,and methods 
+	
+	◆　why using it :  programers can implement generic algorithms that work on collections of different types
+	
+	◆　Type Parameter Naming Convations : 
+			●　K - Key
+			●　N - Number
+			●　T - Type
+			●　V - Value	
+			
+			
+		※The Diamond(In Java SE 7 and later) : 
+			you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (<>) as long as the compiler can determine, or infer, 
+			the type arguments from the context. This pair of angle brackets, <>, is informally called the diamond . This feature, known as type inference
+					
+				eg : Box<Integer> integerBox = new Box<>();
+				 	 Pair<String,String> pairB = new OrderPair<>();
+				 	 Util.compare1(p1, p2);
+	
+	
+	1.Generic Types
+	
+		◆　defination : 
+			●　A generic type is a generic class or interface that is parameterized over types
+			●　the type parameter's scope　is the whole class or interface
+			●　An invocation of a generic type is generally known as a parameterized type
+		◆　syntax : class name<T1, T2, ..., Tn> { /* ... */ }   interface name<T1, T2, ..., Tn> { /* ... */ }
 		
-	2.Type Parameter Naming Convations
-		●　K - Key
-		●　N - Number
-		●　T - Type
-		●　V - Value	
+	2.Generic Methods
 		
-	3.The Diamond(In Java SE 7 and later)
-		eg : Box<Integer> integerBox = new Box<>();
-		 	 Pair<String,String> pairB = new OrderPair<>();
-		 	 
-
+		◆　defination : 
+			●　Static and non-static generic methods,as well as generic class constructors are allowed,
+			●　the type parameter's scope is limited to the method where it is declared.
+			
+		◆　syntax : 
+			●　a generic method includes a list of type parameters, inside angle brackets, which appears before the method's return type. 
+			●　For static generic methods, the type parameter section must appear before the method's return type.
+			　	eg :  public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2)
 		
+	
+	3.Bounded Type Parameters
+	
+		◆　why using it : 
+			●　when i want to restrict the types that can be used as type arguments in a parameterized type.
+							For example, a method that operates on numbers might only want to accept instances of Number or its subclasses
+			●　Bounded type parameters are key to the implementation of generic algorithms				
+						
+							
+		◆   defination :    < [type parameter name] extends [class name]&[interface name]&[interface name]...>   
+							※　extends is used in a general sense to mean either "extends" (as in classes) or "implements" (as in interfaces).
+							
+		◆　features :
+			● bounded type parameters allow you to invoke methods defined in the bounds
+			●　multiple bounds : <T extends B1 & B2 & B3>
+			
+	4.Generic Classes And Subtyping
+		
+		◆   You can subtype a generic class or interface by extending or implementing it. 
+		
+		ep:
+			ArrayList<String> <- List<String> <- Collection<String>. 
+			※  ArrayList<E> implements List<E>, and List<E> extends Collection<E>. 
+				So long as you do not vary the type argument, the subtyping relationship is preserved between the types.
+							
+	5.Wildcards
+		
+		◆　Upper Bounded Wildcards : relax the restrictions on a variable 
+			ep : write a method that works on List<Integer>, List<Double>, and List<Number>
+		
+			●　defination : <? extends [class name or interface name]>
+			
+			
+		◆　Unbounded Wildcards
+		
+			●　why using it : When the code is using methods in the generic class that don't depend on the type parameter. For example, List.size or List.clear. 
+								In fact, Class<?> is so often used because most of the methods in Class<T> do not depend on T.
+			●　defination : class name<?>
+			●　feature : for any concrete type A, List<A> is a subtype of List<?>
+			
+		◆　Lower Bounded Wildcards
+		
+			　defination : <? super [class name or interface name]>
+			
+		
+	
+		
+		
+		
+			

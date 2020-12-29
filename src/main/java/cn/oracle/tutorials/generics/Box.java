@@ -1,17 +1,42 @@
 package cn.oracle.tutorials.generics;
 
-public class Box<T> {
-	private T object;
-	public T getObject() {
-		return object;
+class A { /* ... */ 
+	static void print() {
+		System.out.println("class A");
 	}
-	public void setObject(T object) {
-		this.object = object;
+}
+class B { /* ... */ 
+	static void print() {
+		System.out.println("class B");
+	}
+}
+interface C { /* ... */ }
+interface D { /* ... */ }
+
+class E extends B implements C,D{
+	
+}
+
+public class Box<T extends A>{
+	private T t;
+	public T getT() {
+		return t;
+	}
+	public void setT(T t) {
+		this.t = t;
+	}
+	
+	public <U extends B&C&D> void inspect(U u) {
+		t.print();
+		System.out.println("T:" + t.getClass().getName());
+		System.out.println("U:" + u.getClass().getName());
 	}
 	
 	public static void main(String[] args) {
-		Box<String> box = new Box<>();
-		box.setObject("hello");
-		String str = box.getObject();
+		Box<A> box = new Box<>();
+		box.setT(new A());
+		
+		box.inspect(new E());
 	}
+	
 }

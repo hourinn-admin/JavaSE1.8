@@ -1,10 +1,5 @@
 package cn.oracle.tutorials.generics;
 
-interface Pair<K, V> {
-	public K getKey();
-	public V getValue();
-}
-
 public class OrderPair<K,V> implements Pair<K, V>{
 	
 	private K key;
@@ -24,7 +19,7 @@ public class OrderPair<K,V> implements Pair<K, V>{
 	public V getValue() {return value;}
 	
 	public static void main(String[] args) {
-		Pair<String,Integer> pairA = new OrderPair<>();
+		Pair<String,Integer> pairA = new OrderPair<String,Integer>();
 		Pair<String,String> pairB = new OrderPair<>();
 		Pair<String,Box<Integer>> pairC = new OrderPair<>();
 	}
